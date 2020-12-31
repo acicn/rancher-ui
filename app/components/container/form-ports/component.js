@@ -186,9 +186,6 @@ export default Component.extend({
     const loadBalancerCapabilites = get(this, 'capabilities.loadBalancerCapabilites');
 
     set(this, 'kindChoices', KINDS.map((k) => {
-      if (k == "HostPort") {
-          return;
-      }
       let out = {
         translationKey: null,
         value:          k,
