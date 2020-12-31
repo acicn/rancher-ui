@@ -78,6 +78,10 @@ export default Component.extend({
         errors.push(intl.t('formPorts.error.privateRequired'));
       }
 
+      if (obj.kind === 'HostPort') {
+        errors.push('不准使用 HostPort');
+      }
+
       if (obj.kind === 'HostPort' && !get(obj, '_ipPort')) {
         errors.push(intl.t('formPorts.error.hostPort.sourcePortRequired'));
       }
