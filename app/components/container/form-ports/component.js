@@ -47,7 +47,7 @@ export default Component.extend({
     addPort() {
       this.get('ports').pushObject(get(this, 'store').createRecord({
         type:          'containerPort',
-        kind:          'NodePort',
+        kind:          'ClusterIP',
         protocol:      'TCP',
         containerPort: '',
       }));
@@ -186,6 +186,9 @@ export default Component.extend({
     const loadBalancerCapabilites = get(this, 'capabilities.loadBalancerCapabilites');
 
     set(this, 'kindChoices', KINDS.map((k) => {
+      if (k == "HostPort") {
+          return;
+      }
       let out = {
         translationKey: null,
         value:          k,

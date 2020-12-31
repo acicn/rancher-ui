@@ -1,0 +1,1 @@
+./scripts/build-static -v 2.4.99999-rev1 -s -c cdn.jsdelivr.net/gh/acicn/rancher-ui-releases@latest
